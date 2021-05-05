@@ -13,7 +13,7 @@ jobs:
       - run: mkdir -p my_workspace
       - run: echo "Trying out workspaces"
       - persist_to_workspace:
-          root: my_workspace
+          root: /home/rajshah/DevOps/Git/hello-world
           paths:
             - echo-output
   two:
@@ -26,7 +26,7 @@ jobs:
       - checkout
       - run: echo "A more familiar hi"
       - attach_workspace:
-          at: my_workspace
+          at: /home/rajshah/DevOps/Git/hello-world
       
       - run: |
           if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
