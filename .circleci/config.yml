@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: echo "A first hello"
       - run: mkdir -p my_workspace
-      - run: echo "Trying out workspaces"
+      - run: echo "Trying out workspaces" > ./echo-output 
       - persist_to_workspace:
           root: .
           paths:
