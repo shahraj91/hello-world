@@ -13,9 +13,9 @@ jobs:
       - run: mkdir -p my_workspace
       - run: echo "Trying out workspaces"
       - persist_to_workspace:
-          root: /home/rajshah/DevOps/Git/hello-world
+          root: .
           paths:
-            - echo-output
+            - .
   two:
     docker:
       - image: circleci/ruby:2.4.1
@@ -26,7 +26,7 @@ jobs:
       - checkout
       - run: echo "A more familiar hi"
       - attach_workspace:
-          at: /home/rajshah/DevOps/Git/hello-world
+          at: .
       
       - run: |
           if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
